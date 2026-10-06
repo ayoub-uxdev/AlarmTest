@@ -27,6 +27,30 @@ jobs:
             -configuration Debug \
             -sdk iphoneos \
             -destination 'generic/platform=iOS' \
+            -derivedDataPath build \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGN_IDENTITY=""
+
+      - name: Créer l'IPA non signée
+        run: |
+          APP_PATH="build/Build/Products/Debug-iphoneos/AlarmTest.app"
+          if [ ! -d "$APP_PATH" ]; then
+            echo "AlarmTest.app introuvable à $APP_PATH"
+            ls -R build/Build/Products || true
+            exit 1
+          fi
+          rm -rf Payload AlarmTest-unsigned.ipa
+          mkdir Payload
+          cp -R "$APP_PATH" Payload/
+          ditto -c -k --sequesterRsrc --keepParent Payload AlarmTest-unsigned.ipa
+          ls -lh AlarmTest-unsigned.ipa
+          unzip -l AlarmTest-unsigned.ipa | head -20
+
+      - name: Publier l'IPA non signée (artifact)
+        uses: actions/upload-artifact@v4
+        with:
+          name: AlarmTest-unsigned-ipa
+          path: AlarmTest-unsigned.ipa
+          if-no-files-found: error
+          retention-days: 14
