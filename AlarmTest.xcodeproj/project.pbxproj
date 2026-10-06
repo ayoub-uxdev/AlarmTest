@@ -10,26 +10,26 @@
 		4A1000000000000000000004 /* AlarmTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlarmTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemRootSynchronizedBuildFileExceptionSet section */
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
 		4A1000000000000000000010 /* Exceptions for "AlarmTest" folder in "AlarmTest" target */ = {
-			isa = PBXFileSystemRootSynchronizedBuildFileExceptionSet;
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
 			target = 4A1000000000000000000006 /* AlarmTest */;
 		};
-/* End PBXFileSystemRootSynchronizedBuildFileExceptionSet section */
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
-/* Begin PBXFileSystemRootSynchronizedGroup section */
+/* Begin PBXFileSystemSynchronizedRootGroup section */
 		4A1000000000000000000005 /* AlarmTest */ = {
-			isa = PBXFileSystemRootSynchronizedGroup;
+			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				4A1000000000000000000010 /* Exceptions for "AlarmTest" folder in "AlarmTest" target */,
 			);
 			path = AlarmTest;
 			sourceTree = "<group>";
 		};
-/* End PBXFileSystemRootSynchronizedGroup section */
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4A1000000000000000000008 /* Frameworks */ = {
